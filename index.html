@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'Press Start 2P', cursive;
+    }
+
+    body {
+        background-color: rgb(60, 53, 53);
+    }
+
+    #game-screen-container {
+        position: relative;
+        display: inline-block;
+        left: 0;
+    }
+
+    #playerHealth-container {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        border-top: 4px solid white;
+        border-left: 4px solid white;
+        border-bottom: 4px solid white;
+    }
+
+    #playerHealth-background {
+        background-color: rgb(125, 4, 4);
+        height: 30px;
+        width: 100%;
+    }
+
+    #playerHealth {
+        position: absolute;
+        background-color: #818cf8;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+    }
+
+    #timer {
+        background-color: black;
+        width: 100px;
+        height: 50px;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: bolder;
+        font-size: 28px;
+        border: 4px solid white;
+    }
+
+    #enemyHealth-container {
+        position: relative;
+        width: 100%;
+        border-top: 4px solid white;
+        border-right: 4px solid white;
+        border-bottom: 4px solid white;
+    }
+
+    #enemyHealth-background {
+        background-color: rgb(125, 4, 4);
+        height: 30px;
+    }
+
+    #enemyHealth {
+        position: absolute;
+        background-color: #818cf8;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+
+    #pla-ti-hea-container {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 20px;
+        top: 20px;
+    }
+
+    #displayText {
+        position: absolute;
+        color: white;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        font-size: 28px;
+    }
+
+    #full-screen {
+        display: flex;
+        flex-direction: row;
+    }
+
+    #control-pannel {
+        height: 100vh;
+        width: 315px;
+        background: transparent;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #restart-but{
+        width: 70%;
+        height: 2.1rem;
+        margin: 60px auto;
+        background-color: #818cf8;
+        color: white;
+        border: 3px solid white;
+    }
+    #names{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 95%;
+        position: absolute;
+        color: aliceblue;
+        top: 0;
+        right: 8px;
+        left: 27px;
+    }
+</style>
+
+<body>
+
+    <div id="full-screen">
+
+        <!-- This div contains the the game-screen -->
+        <div id="game-screen-container">
+
+            <!-- this div contains the health-bar and timer -->
+            <div id="pla-ti-hea-container">
+                <div id = 'names'><div>SamuraiMack</div> <div>Kenji</div></div>
+                <!-- playerHealth -->
+                <div id="playerHealth-container">
+                    <div id="playerHealth-background"></div>
+                    <div id="playerHealth"></div>
+                </div>
+
+                <!-- timer -->
+                <div id="timer"></div>
+
+                <!-- enemyHealth -->
+                <div id="enemyHealth-container">
+                    <div id="enemyHealth-background"></div>
+                    <div id="enemyHealth"></div>
+                </div>
+
+            </div>
+
+            <!-- This will contains the text of winning -->
+            <div id="displayText"></div>
+            <canvas id="canvas"></canvas>
+        </div>
+        <div id="control-pannel">
+            <button id="restart-but">restart</button>
+        </div>
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"
+    integrity="sha512-VEBjfxWUOyzl0bAwh4gdLEaQyDYPvLrZql3pw1ifgb6fhEvZl9iDDehwHZ+dsMzA0Jfww8Xt7COSZuJ/slxc4Q=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="./js/utils.js"></script>
+<script src="./js/classes.js"></script>
+<script src="index.js"></script>
+
+</html>
